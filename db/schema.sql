@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS neo_plants;
+CREATE DATABASE neo_plants;
