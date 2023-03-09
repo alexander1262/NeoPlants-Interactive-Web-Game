@@ -1,35 +1,35 @@
-const signupButton = document.querySelector(".signup-button")
+const signupButton = document.querySelector('.signup-button');
 
 async function handleSignup(event) {
-    event.preventDefault();
-    
-    const userNameValue = document.querySelector('#username-signup').value.trim();
-    const passwordValue = document.querySelector('#password-signup').value.trim();
-    const emailValue = document.querySelector('#email-signup').value.trim();
+  event.preventDefault();
 
-    const newUser = {
-        username: userNameValue,
-        email: emailValue,
-        password: passwordValue,
-    };
+  const userNameValue = document.querySelector('#username-signup').value.trim();
+  const passwordValue = document.querySelector('#password-signup').value.trim();
+  const emailValue = document.querySelector('#email-signup').value.trim();
 
-    await fetch("/api/signup", {
-        body: JSON.stringify(newUser),
-        method: "POST",
-        headers: {
-            "content-type": 'application/json',
-        },
-    });
+  const newUser = {
+    username: userNameValue,
+    email: emailValue,
+    password: passwordValue,
+  };
 
-    if (response.ok) {
-        console.log('Signed Up');
-      } else {
-        console.log('Not Signed Up');
-      }
+  await fetch('/api/signup', {
+    body: JSON.stringify(newUser),
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+  });
 
-    console.log({ userNameValue, passwordValue, emailValue});
+  if (response.ok) {
+    console.log('Signed Up');
+  } else {
+    console.log('Not Signed Up');
+  }
 
-    signupForm.reset();
+  console.log({ userNameValue, passwordValue, emailValue });
+
+  signupForm.reset();
 }
 
-signupButton.addEventListener("submit", handleSignup)
+signupButton.addEventListener('submit', handleSignup);
