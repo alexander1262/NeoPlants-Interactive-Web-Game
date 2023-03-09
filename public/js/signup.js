@@ -1,4 +1,4 @@
-const signupButton = document.querySelector(".form-signup")
+const signupButton = document.querySelector(".signup-button")
 
 async function handleSignup(event) {
     event.preventDefault();
