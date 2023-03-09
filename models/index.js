@@ -7,4 +7,8 @@ User.hasOne(Character, {
     onDelete: 'SET NULL',
 });
 
+Character.belongsTo(User, {
+    foreignKey: 'user_id',
+})
+
 module.exports = { User, Character };
