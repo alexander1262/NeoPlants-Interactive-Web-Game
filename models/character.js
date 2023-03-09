@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { sequelize } = require('../config/connection');
 
 class Character extends Model { }
 
@@ -10,21 +10,21 @@ Character.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
+            autoIncrement: true
         },
         charName: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [2, 15],
-            },
+                len: [2, 15]
+            }
         },
         charType: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                notEmpty: true,
-            },
+                notEmpty: true
+            }
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -39,7 +39,7 @@ Character.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'license',
+        modelName: 'character',
     }
 );
 
