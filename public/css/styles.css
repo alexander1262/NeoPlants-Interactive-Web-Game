@@ -24,3 +24,160 @@
   top: 500px;
   border: 1px solid #000000;
 }
+body {
+  background: linear-gradient(#438cfa, #70ffff);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Short Stack", cursive;
+}
+
+h1 {
+  color: rgb(255, 143, 38);
+  text-align: center;
+  font-size: 50px;
+}
+
+.homepageButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-link {
+  color: rgb(255, 143, 38);
+  text-decoration: none;
+  background-color: rgb(255, 204, 157);
+  padding: 5px;
+  width: 200px;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "Short Stack", cursive;
+  text-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.login-link:hover {
+  scale: 1.05;
+  transition: 0.4s;
+}
+
+.signup-link {
+  color: rgb(255, 143, 38);
+  text-decoration: none;
+  background-color: rgb(255, 204, 157);
+  padding: 5px;
+  width: 200px;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "Short Stack", cursive;
+  text-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.signup-link:hover {
+  scale: 1.05;
+  transition: 0.4s;
+}
+
+/* .main {
+    background-color: rgb(67, 67, 255);
+} */
+
+.formFlex {
+  background-color: rgb(255, 219, 186);
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.formFlex label {
+  color: rgb(255, 143, 38);
+}
+
+.formFlex input {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.formFlex button {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  background-color: rgb(255, 219, 186);
+  color: rgb(255, 143, 38);
+  text-shadow: 2px 2px 2px black;
+  font-size: 25px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.formFlex button:hover {
+  scale: 1.05;
+  transition: 0.2s;
+}
+
+.login-form {
+  background-color: rgb(255, 219, 186);
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.login-form label {
+  color: rgb(255, 143, 38);
+}
+
+.login-form input {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.login-form button {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  background-color: rgb(255, 219, 186);
+  color: rgb(255, 143, 38);
+  text-shadow: 2px 2px 2px black;
+  font-size: 25px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.login-form button:hover {
+  scale: 1.05;
+  transition: 0.2s;
+}
+
+.login-form button:hover {
+  scale: 1.05;
+  transition: 0.2s;
+}
+
+.login-form button:hover {
+  scale: 1.05;
+  transition: 0.2s;
+}
