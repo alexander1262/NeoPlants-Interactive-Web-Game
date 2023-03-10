@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable indent */
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
