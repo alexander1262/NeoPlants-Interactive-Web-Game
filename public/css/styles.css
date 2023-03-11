@@ -172,12 +172,8 @@ h1 {
   transition: 0.2s;
 }
 
-.login-form button:hover {
-  scale: 1.05;
-  transition: 0.2s;
-}
-
-.login-form button:hover {
-  scale: 1.05;
-  transition: 0.2s;
+input {
+    border-radius: 5px;
+    border: 2px solid rgb(252, 136, 28);
+    box-shadow: 2px 2px 2px black;
 }
