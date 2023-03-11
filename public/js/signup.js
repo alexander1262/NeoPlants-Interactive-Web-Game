@@ -2,6 +2,7 @@ const signupButton = document.querySelector('.signup-button');
 
 async function handleSignup(event) {
   event.preventDefault();
+  console.log('here');
 
   const userNameValue = document.querySelector('#username-signup').value.trim();
   const passwordValue = document.querySelector('#password-signup').value.trim();
@@ -13,7 +14,7 @@ async function handleSignup(event) {
     password: passwordValue,
   };
 
-  await fetch('/api/signup', {
+  const response = await fetch('/api/users/signup', {
     body: JSON.stringify(newUser),
     method: 'POST',
     headers: {
@@ -29,7 +30,7 @@ async function handleSignup(event) {
 
   console.log({ userNameValue, passwordValue, emailValue });
 
-  signupForm.reset();
+  signupButton.reset();
 }
 
-signupButton.addEventListener('submit', handleSignup);
+signupButton.addEventListener('click', handleSignup);
