@@ -1,0 +1,28 @@
+.el {
+    /* width: 100px; */
+    position: absolute;
+    top: 100px;
+
+}
+
+.container {
+    width:fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+.box {
+    background-color: #2774d8;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    top: -15px;
+    left: 15px;
+}
+path {
+    stroke: rgba(0, 0, 0, 0.007);
+    stroke-width: 1px;
+    fill:none;
+}
