@@ -24,7 +24,6 @@ async function handleLogin(event) {
     },
   });
 
-  // test control --Delete after it works--
   if (response.ok) {
     console.log('worked');
     window.location.replace('/game');
