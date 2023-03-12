@@ -1,5 +1,3 @@
-const playButtonsDiv = document.createElement('div.buttonWrapper');
-
 const feedMeButton = document.createElement('button');
 feedMeButton.id = 'feedMe';
 feedMeButton.innerHTML = 'Feed Me Seymour!';
@@ -18,6 +16,5 @@ musicButton.innerHTML = 'Dont stop rockin!';
 const sleepButton = document.createElement('button');
 sleepButton.id = 'sleep';
 sleepButton.innerHTML = "I'm tired!";
-// document.body.appendChild(sleepButton);
-
-playButtonsDiv.appendChild(feedMeButton);
+sleepButton.style.background = 'white';
+document.body.appendChild(sleepButton);
