@@ -1,7 +1,7 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-inner-declarations */
 /* eslint-disable prettier/prettier */
-const life = 100;
+const life = 99;
 
 const progressBar = document.createElement('div');
 progressBar.id = 'myBar';
@@ -13,7 +13,7 @@ function decay() {
     if (life === 100) {
         const elem = document.getElementById('myBar');
         let width = 99;
-        const id = setInterval(frame, 100000);
+        const id = setInterval(frame, 100);
         function frame() {
             if (width >= 100 || width <= 0) {
                 clearInterval(id);
@@ -33,15 +33,20 @@ decay();
 
 
 
-// function health() {
-//     let i = 20;
+// async function health() {
+//     let i = 1;
 //     ++i;
 //     const elem = document.getElementById('myBar');
-//     elem.style.width = i;
-//     elem.innerHTML = i;
+//     elem.style.width = ++i;
+//     elem.innerHTML = ++i;
 //     console.log(i);
 
 // };
+
+const feedMeButton = document.getElementById('feedMe');
+const playButton = document.getElementById('play');
+const musicButton = document.getElementById('dance');
+const sleepButton = document.getElementById('sleep');
 // const playButtonsDiv = document.createElement('div.buttonWrapper');
 
 // const feedMeButton = document.createElement('button');
@@ -69,6 +74,7 @@ decay();
 
 
 
-// feedMeButton.addEventListener('click', health());
-// playButton.addEventListener('click', health(life));
-// musicButton.addEventListener('click', health(life));
+feedMeButton.addEventListener('click', () => health());
+playButton.addEventListener('click', () => console.log('you clicked me!'));
+musicButton.addEventListener('click', () => console.log('you clicked me!'));
+sleepButton.addEventListener('click', () => console.log('you clicked me!'));
