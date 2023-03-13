@@ -29,6 +29,37 @@
   bottom: -50vh;
 }
 
+#music-toggle {
+  color: rgb(255, 143, 38);
+  background-color: rgb(255, 204, 157);
+  padding: 5px;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  font-size: 17px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "Short Stack", cursive;
+  text-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
+}
+
+#music-toggle:hover {
+  background-color: rgb(172, 84, 2);
+}
+
+.musicSection {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+#volume-slider {
+  width: 150px;
+}
+
 .playButtons {
   display: flex;
   position: absolute;
