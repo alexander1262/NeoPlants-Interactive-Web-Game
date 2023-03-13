@@ -1,6 +1,6 @@
 const music = document.getElementById('music');
 const musicToggle = document.getElementById('music-toggle');
-const volumeRange = document.getElementById('volume-range');
+const volumeRange = document.getElementById('volume-slider');
 
 function toggleMusic() {
   if (music.paused) {
