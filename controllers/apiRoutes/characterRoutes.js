@@ -7,9 +7,9 @@ router.get('/', async (req, res) => {
     const charData = await Character.findAll({
       include: [User],
     });
-    res.status(200).json(charData);
+    return res.status(200).json(charData);
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
@@ -23,9 +23,9 @@ router.get('/:id', async (req, res) => {
       res.status(404).json({ message: 'No character with this id' });
       return;
     }
-    res.status(200).json(charData);
+    return res.status(200).json(charData);
   } catch (err) {
-    res.status(500);
+    return res.status(500);
   }
 });
 
