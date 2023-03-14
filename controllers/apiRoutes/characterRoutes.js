@@ -5,9 +5,10 @@ const { Character, User } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const charData = await Character.findAll({
-      include: [User],
+      include: [{ model: User, attributes: ['id', 'name'] }],
     });
-    return res.status(200).json(charData);
+    console.log(charData.user);
+    res.status(200).json(charData);
   } catch (err) {
     return res.status(500).json(err);
   }
@@ -16,7 +17,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const charData = await Character.findByPk(req.params.id, {
-      include: [{ model: User }],
+      include: [{ model: User, attributes: ['id', 'name'] }],
     });
 
     if (!charData) {
