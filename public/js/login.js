@@ -29,6 +29,8 @@ async function handleLogin(event) {
     window.location.replace('/game');
   } else {
     console.log('not worked');
+    document.getElementById('incorrectAlertP').innerHTML =
+      'Incorrect username or password!';
   }
 
   // reset the form
