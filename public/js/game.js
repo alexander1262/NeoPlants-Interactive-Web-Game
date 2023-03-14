@@ -12,6 +12,8 @@ document.body.prepend(progressBar);
 const bar = document.getElementById('myBar');
 bar.dataset.life = 100;
 
+const id = setInterval(decay, 10000);
+
 function decay() {
 
     const elem = document.getElementById('myBar');
@@ -23,12 +25,16 @@ function decay() {
     elem.style.width = `${width}%`;
     elem.dataset.life = width;
     elem.innerHTML = `${width}%`;
+    if (width === 0) {
+        clearInterval(id);
+        alert('You killed me!')
+    }
 };
 
 
 
 
-setInterval(decay, 10000);
+
 
 
 
