@@ -1,8 +1,15 @@
-.el {
-    /* width: 100px; */
+.sun {
+    width: 100px;
     position: absolute;
     top: 100px;
-
+    left: -200px;
+  
+}
+.moon {
+    width: 100px;
+    position: absolute;
+    top: 100px;
+    left: -200px;
 }
 
 .container {
@@ -25,4 +32,8 @@ path {
     stroke: rgba(0, 0, 0, 0.007);
     stroke-width: 1px;
     fill:none;
+}
+
+.erase {
+display: none;
 }
