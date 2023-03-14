@@ -24,6 +24,7 @@ async function handleSignup(event) {
 
   if (response.ok) {
     console.log('Signed Up');
+    document.getElementById('signedUpP').innerHTML = 'Successfully signed up!';
   } else {
     console.log('Not Signed Up');
   }
