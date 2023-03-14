@@ -1,7 +1,7 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-inner-declarations */
 /* eslint-disable prettier/prettier */
-const life = 99;
+
 
 const progressBar = document.createElement('div');
 progressBar.id = 'myBar';
@@ -9,39 +9,46 @@ progressBar.innerHTML = '10%';
 progressBar.style.color = 'red';
 document.body.prepend(progressBar);
 
+const bar = document.getElementById('myBar');
+bar.dataset.life = 100;
+
+const id = setInterval(decay, 10000);
+
 function decay() {
-    if (life === 100) {
-        const elem = document.getElementById('myBar');
-        let width = 99;
-        const id = setInterval(frame, 100);
-        function frame() {
-            if (width >= 100 || width <= 0) {
-                clearInterval(id);
-                alert('You killed me!')
-            } else {
-                width--;
-                elem.style.width = `${width}%`;
-                elem.innerHTML = `${width}%`;
-            }
-        }
+
+    const elem = document.getElementById('myBar');
+    let width = elem.dataset.life;
+    // function frame() {
+    // if (width > 0) { --width }
+    console.log(width);
+    --width;
+    elem.style.width = `${width}%`;
+    elem.dataset.life = width;
+    elem.innerHTML = `${width}%`;
+    if (width === 0) {
+        clearInterval(id);
+        alert('You killed me!')
     }
-}
+};
 
 
 
-decay();
 
 
 
-// async function health() {
-//     let i = 1;
-//     ++i;
-//     const elem = document.getElementById('myBar');
-//     elem.style.width = ++i;
-//     elem.innerHTML = ++i;
-//     console.log(i);
 
-// };
+
+
+function health() {
+
+    const el = document.getElementById('myBar');
+    let i = el.dataset.life;
+    el.style.width = ++i;
+    el.innerHTML = ++i;
+    console.log(i);
+    el.dataset.life = i;
+
+};
 
 const feedMeButton = document.getElementById('feedMe');
 const playButton = document.getElementById('play');
@@ -75,6 +82,6 @@ const sleepButton = document.getElementById('sleep');
 
 
 feedMeButton.addEventListener('click', () => health());
-playButton.addEventListener('click', () => console.log('you clicked me!'));
-musicButton.addEventListener('click', () => console.log('you clicked me!'));
-sleepButton.addEventListener('click', () => console.log('you clicked me!'));
+playButton.addEventListener('click', () => health());
+musicButton.addEventListener('click', () => health());
+sleepButton.addEventListener('click', () => health());
