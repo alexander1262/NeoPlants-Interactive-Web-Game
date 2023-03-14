@@ -5,20 +5,20 @@ const userData = require('./userData.json');
 const charData = require('./charData.json');
 
 const seedDatabase = async () => {
-    await sequelize.sync({ force: true });
+  await sequelize.sync({ force: true });
 
-    await User.bulkCreate(userData, {
-        individualHooks: true,
-        returning: true,
+  const users = await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  for (const character of charData) {
+    await Character.create({
+      ...character,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
     });
-
-    await sequelize.sync({ force: true });
-
-    await Character.bulkCreate(charData, {
-        returning: true,
-    });
-
-    process.exit(0);
+  }
+  process.exit(0);
 };
 
 seedDatabase();
