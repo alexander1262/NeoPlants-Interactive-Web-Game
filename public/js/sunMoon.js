@@ -6,7 +6,7 @@ const sun = function () {
     translateX: 4560,
     translateY: 800,
     easing: 'easeInOutSine',
-    duration: 41600,    
+    duration: 41600,
   });
 };
 const moon = function () {
@@ -15,7 +15,7 @@ const moon = function () {
     translateX: 4560,
     translateY: 800,
     easing: 'easeInOutSine',
-    duration: 41600,    
+    duration: 41600,
   });
 };
 
@@ -32,18 +32,19 @@ const movement = function () {
       sunDisplay.style.visibility = 'hidden';
       sun();
     }
-    if (seconds === 48) {      
-      document.body.style.backgroundImage = 'url(../images/newnightskytest.png)';
+    if (seconds === 48) {
+      document.body.style.backgroundImage =
+        'url(../images/newnightskytest.png)';
       moon();
     }
     if (seconds === 10) {
       anime({
         targets: '.sun',
-        translateX: -150,        
+        translateX: -150,
       });
     }
-    
-    if (seconds === 0) {      
+
+    if (seconds === 0) {
       document.body.style.backgroundImage = 'url(../images/newdayskytest.png)';
       anime({
         targets: '.moon',

@@ -1,7 +1,7 @@
 #clock {
     display: block;
-    position: relative;
-    top: 460px;
+    position: absolute;
+    scale: .8;
 }
 
 #clock h2 {
