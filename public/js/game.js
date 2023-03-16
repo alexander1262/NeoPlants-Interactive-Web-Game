@@ -1,7 +1,13 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-inner-declarations */
 /* eslint-disable prettier/prettier */
-function getScore() {
+const progressBar = document.createElement('div');
+progressBar.id = 'myBar';
+// progressBar.innerHTML = 0;
+progressBar.style.color = 'red';
+document.body.prepend(progressBar);
+
+async function getScore() {
     const score = document.getElementById('character');
     const healthBar = score.dataset.id;
     console.log(healthBar);
@@ -15,24 +21,22 @@ function getScore() {
             return res.json();
         }
         throw new Error('Something went wrong');
+    }).then((data) => {
+        console.log(data.charScore);
+        const bar = document.getElementById('myBar');
+        bar.dataset.life = data.charScore;
+        bar.innerHTML = data.charScore;
     })
-        .then((data) => {
-            console.log(data);
-        });
-
-
-
 };
+
 getScore();
 
-const progressBar = document.createElement('div');
-progressBar.id = 'myBar';
-progressBar.innerHTML = '10%';
-progressBar.style.color = 'red';
-document.body.prepend(progressBar);
 
-const bar = document.getElementById('myBar');
-bar.dataset.life = 100;
+
+
+
+
+
 
 const id = setInterval(decay, 10000);
 
