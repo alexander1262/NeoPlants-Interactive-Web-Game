@@ -30,6 +30,9 @@ async function getScore() {
 
 getScore();
 
+
+
+
 const id = setInterval(decay, 10000);
 
 function decay() {
@@ -82,7 +85,10 @@ function sleep() {
 }
 
 feedMeButton.addEventListener('click', () => health());
+feedMeButton.addEventListener('click', () => feed());
 playButton.addEventListener('click', () => health());
+playButton.addEventListener('click', () => play());
 musicButton.addEventListener('click', () => health());
+musicButton.addEventListener('click', () => dance());
 sleepButton.addEventListener('click', () => health());
 

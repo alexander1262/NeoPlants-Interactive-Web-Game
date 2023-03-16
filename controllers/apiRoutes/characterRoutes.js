@@ -33,7 +33,7 @@ router.get('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const { id } = req.params.id;
-    const increaseBy = 1;
+    const { score } = req.body.score;
 
     const character = await Character.findByPk(id);
 
@@ -41,7 +41,7 @@ router.put('/:id', async (req, res) => {
       throw new Error('Character not found');
     }
 
-    const newScore = character.charScore + increaseBy;
+    const newScore = score;
 
     const updated = await Character.update(
       { charScore: newScore },
@@ -65,7 +65,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
     const newChar = await Character.create({
       include: [{ model: User, attributes: ['id', 'name'] }],
