@@ -139,9 +139,6 @@ h1 {
   text-shadow: 1px 1px 1px black;
 }
 
-.frontPageImage {
-  background-image: url('./images/frontpagelogo/png');
-}
 
 .homepageButtons {
   display: flex;
@@ -576,19 +573,22 @@ input {
   /* -webkit-box-reflect: below 1px linear-gradient(transparent,#0004); */
 }
 
+/* Sun and Moon Movement */
 .sun {
   width: 150px;
   position: absolute;
   top: 100px;
   left: -200px;
   z-index: -2;
+  overscroll-behavior-y: none;
 }
 .moon {
-  width: 150px;
+  width: 100px;
   position: absolute;
   top: 100px;
   left: -200px;
   z-index: -2;
+  overscroll-behavior-y: none;
 }
 
 .container {
@@ -599,6 +599,7 @@ input {
   margin-left: auto;
   margin-right: auto;
 }
+
 .box {
   background-color: #2774d8;
   position: relative;
