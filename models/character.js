@@ -28,7 +28,8 @@ Character.init(
     },
     charScore: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      defaultValue: 100,
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,

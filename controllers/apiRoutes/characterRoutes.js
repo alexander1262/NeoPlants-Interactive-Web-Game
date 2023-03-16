@@ -65,4 +65,18 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try {
+    const newChar = await Character.create({
+      include: [{ model: User, attributes: ['id', 'name'] }],
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+    console.log(newChar);
+    return res.status(200).json(newChar);
+  } catch (err) {
+    return res.status(400).json(err);
+  }
+});
+
 module.exports = router;

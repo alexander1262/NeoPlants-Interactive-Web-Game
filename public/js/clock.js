@@ -13,6 +13,11 @@ function clock() {
     hourClock -= 12;
     am = 'PM';
   }
+
+  if (hourClock >= 12) {
+    am = 'PM';
+  }
+
   hourClock = hourClock < 10 ? '0' + hourClock : hourClock;
   minuteClock = minuteClock < 10 ? '0' + minuteClock : minuteClock;
   secondClock = secondClock < 10 ? '0' + secondClock : secondClock;
