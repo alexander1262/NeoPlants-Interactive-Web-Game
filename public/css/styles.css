@@ -587,8 +587,7 @@ input {
   position: absolute;
   top: 100px;
   left: -200px;
-  z-index: -2;
-  overscroll-behavior-y: none;
+  z-index: -2; 
 }
 
 .container {
@@ -612,10 +611,6 @@ path {
   stroke: rgba(0, 0, 0, 0.007);
   stroke-width: 1px;
   fill:none;
-}
-
-.erase {
-display: none;
 }
 
 @media screen and (max-width: 768px) {
