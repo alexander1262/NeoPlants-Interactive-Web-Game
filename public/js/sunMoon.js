@@ -7,18 +7,24 @@ let seconds = 360;
 // Create a timer
 const movement = function () {
   const timer = setInterval(() => {
-    seconds -= 1;
-    console.log(seconds);
-    if (seconds === 88) {
-      sunDisplay.style.visibility = 'hidden';
+    seconds -= 1; 
+    screen
+    console.log(screen)  
+    if (seconds === 358) {
+      sunDisplay.removeClass('erase')
       sun();
     }
     if (seconds === 178) {
+<<<<<<< HEAD
       sunDisplay.addClass('erase');
+=======
+      sunDisplay.addClass('erase')
+>>>>>>> 1052a98aeca51ac008c80850920695d525da7552
       anime({
         targets: '.sun',
         translateX: -150,
       });
+<<<<<<< HEAD
       document.body.style.backgroundImage =
         'url(../images/newnightskytest.png)';
       moon();
@@ -27,6 +33,15 @@ const movement = function () {
     if (seconds === 0) {
       document.body.style.backgroundImage = 'url(../images/newdayskytest.png)';
       moonDisplay.addClass('erase');
+=======
+      document.body.style.backgroundImage = 'url(../images/newnightskytest.png)';
+      moon();
+    }    
+    
+    if (seconds === 0) {
+      document.body.style.backgroundImage = 'url(../images/newdayskytest.png)';
+      moonDisplay.addClass('erase')
+>>>>>>> 1052a98aeca51ac008c80850920695d525da7552
       anime({
         targets: '.moon',
         translateX: -150,

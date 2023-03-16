@@ -591,14 +591,6 @@ input {
   overscroll-behavior-y: none;
 }
 
-.container {
-  width:fit-content;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-}
 .box {
   background-color: #2774d8;
   position: relative;
