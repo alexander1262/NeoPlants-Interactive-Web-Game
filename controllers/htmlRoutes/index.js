@@ -1,3 +1,5 @@
+const { User, Character } = require('../../models');
+
 const router = require('express').Router();
 
 // router.post('/signup', async (req, res) => {
@@ -20,8 +22,10 @@ router.get('/login', async (req, res) => {
 });
 
 router.get('/game', async (req, res) => {
+  console.log(req.session);
   if (req.session.loggedIn) {
     res.render('game', {
+      userData: req.session.userData,
       loggedIn: req.session.loggedIn,
     });
   }

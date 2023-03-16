@@ -1,7 +1,29 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-inner-declarations */
 /* eslint-disable prettier/prettier */
+function getScore() {
+    const score = document.getElementById('character');
+    const healthBar = score.dataset.id;
+    console.log(healthBar);
+    fetch(`/api/character/${healthBar}`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json',
+        },
+    }).then((res) => {
+        if (res.status === 200) {
+            return res.json();
+        }
+        throw new Error('Something went wrong');
+    })
+        .then((data) => {
+            console.log(data);
+        });
 
+
+
+};
+getScore();
 
 const progressBar = document.createElement('div');
 progressBar.id = 'myBar';
@@ -18,8 +40,6 @@ function decay() {
 
     const elem = document.getElementById('myBar');
     let width = elem.dataset.life;
-    // function frame() {
-    // if (width > 0) { --width }
     console.log(width);
     --width;
     elem.style.width = `${width}%`;
@@ -47,7 +67,6 @@ function health() {
     el.innerHTML = ++i;
     console.log(i);
     el.dataset.life = i;
-
 };
 
 const feedMeButton = document.getElementById('feedMe');
