@@ -27,7 +27,6 @@ let seconds = 90;
 const movement = function () {
   const timer = setInterval(() => {
     seconds -= 1;
-    console.log(seconds);
     if (seconds === 88) {
       sunDisplay.style.visibility = 'hidden';
       sun();
