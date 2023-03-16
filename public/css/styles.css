@@ -26,7 +26,18 @@
   display: flex;
   /* top: 500px; */
   /* border: 1px solid #000000; */
-  bottom: -50vh;
+  bottom: -40vh;
+}
+
+.welcomeGreeting {
+  position:relative;
+  bottom: -42vh;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 30px;
+  color: rgb(255, 143, 38);
+  text-shadow: 2px 2px 2px black;
 }
 
 #music-toggle {
@@ -95,17 +106,17 @@
 
 body {
   background: url(../images/newdayskytest.png);
+  display: block;
   margin: 0;
-  background-attachment: fixed;
   font-family: "Short Stack", cursive;
-  background-size: 100% 100%;
+  /* background-size: 100% 100%; */
   background-repeat: no-repeat;
-  /* background-size: 100% auto; */
-  height: 100vh;
-  width: 100vw;
+  background-size: 100% 100%;
+  /* height: 100vh;
+  width: 100vw; */
   /* width: 100%; 
   height: 100%; */
-  resize:both;
+  resize:none;
   overflow:hidden;
   background-attachment: fixed;
 }
@@ -128,9 +139,6 @@ h1 {
   text-shadow: 1px 1px 1px black;
 }
 
-.frontPageImage {
-  background-image: url('./images/frontpagelogo/png');
-}
 
 .homepageButtons {
   display: flex;
@@ -565,29 +573,33 @@ input {
   /* -webkit-box-reflect: below 1px linear-gradient(transparent,#0004); */
 }
 
+/* Sun and Moon Movement */
 .sun {
   width: 150px;
   position: absolute;
   top: 100px;
   left: -200px;
   z-index: -2;
+  overscroll-behavior-y: none;
 }
 .moon {
-  width: 150px;
+  width: 100px;
   position: absolute;
   top: 100px;
   left: -200px;
   z-index: -2;
+  overscroll-behavior-y: none;
 }
 
 .container {
-  width:fit-content;
+  /* width:fit-content; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
 }
+
 .box {
   background-color: #2774d8;
   position: relative;
@@ -626,7 +638,8 @@ display: none;
     width: 200px;
   }
   body {
-    max-height: 100vh;
+    max-height: 768px;
+    max-width: 390px;
     overflow-x: hidden;
     overflow-y: hidden;
   }
@@ -637,4 +650,10 @@ display: none;
     padding-left: 0;
     padding-right: 0;
   }
+  /* .sun {
+    scale: .25;
+  }
+  .moon {
+    scale: .25;
+  } */
 }

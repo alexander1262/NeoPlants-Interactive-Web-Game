@@ -1,6 +1,5 @@
-const { User, Character } = require('../../models');
-
 const router = require('express').Router();
+const { User, Character } = require('../../models');
 
 // router.post('/signup', async (req, res) => {
 //   const newUserData = req.body;

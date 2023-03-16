@@ -66,10 +66,12 @@ function health() {
 
     const el = document.getElementById('myBar');
     let i = el.dataset.life;
-    el.style.width = ++i;
-    el.innerHTML = ++i;
-    console.log(i);
-    el.dataset.life = i;
+    if (i <= 100) {
+        el.style.width = ++i;
+        el.innerHTML = ++i;
+        console.log(i);
+        el.dataset.life = i;
+    }
 };
 
 const feedMeButton = document.getElementById('feedMe');
@@ -77,7 +79,27 @@ const playButton = document.getElementById('play');
 const musicButton = document.getElementById('dance');
 const sleepButton = document.getElementById('sleep');
 
+function dance() {
+    document.getElementById('character').src = '/images/music.webp';
+}
+
+function feed() {
+    document.getElementById('character').src = '/images/cook.webp'
+}
+
+function play() {
+    document.getElementById('character').src = '/images/mail.webp'
+}
+
+function sleep() {
+    document.getElementById('character').src = '/images/what.webp'
+}
+
 feedMeButton.addEventListener('click', () => health());
+feedMeButton.addEventListener('click', () => feed());
 playButton.addEventListener('click', () => health());
+playButton.addEventListener('click', () => play());
 musicButton.addEventListener('click', () => health());
+musicButton.addEventListener('click', () => dance());
 sleepButton.addEventListener('click', () => health());
+sleepButton.addEventListener('click', () => sleep());
