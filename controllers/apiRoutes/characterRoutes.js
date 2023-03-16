@@ -32,7 +32,7 @@ router.get('/:id', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   try {
-    const { id } = req.params;
+    const { id } = req.params.id;
     const increaseBy = 1;
 
     const character = await Character.findByPk(id);

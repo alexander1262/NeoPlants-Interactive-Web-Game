@@ -14,7 +14,6 @@ async function handleLogin(event) {
     email: emailValue,
     password: passwordValue,
   };
-
   // ?
   const response = await fetch('/api/users/login', {
     body: JSON.stringify(userLogin),
@@ -32,7 +31,6 @@ async function handleLogin(event) {
     document.getElementById('incorrectAlertP').innerHTML =
       'Incorrect username or password!';
   }
-
   // reset the form
   // loginForm.reset();
 }

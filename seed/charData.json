@@ -2,26 +2,31 @@
 {
     "charName":"Naruto",
     "charType":"Anna",
-    "charScore": 1
+    "charScore": 1,
+    "user_id": 1
 },
 {
     "charName":"Bakugo",
     "charType":"Anna",
-    "charScore": 4
+    "charScore": 4,
+    "user_id": 2
 },
 {
     "charName":"Gideon",
     "charType":"Anna",
-    "charScore": 1
+    "charScore": 1,
+    "user_id": 3
 },
 {
     "charName":"Lisa",
     "charType":"Anna",
-    "charScore": 3
+    "charScore": 3,
+    "user_id": 4
 },
 {
     "charName":"Prin",
     "charType":"Anna",
-    "charScore": 9
+    "charScore": 9,
+    "user_id": 5
 }
 ]

@@ -1,7 +1,9 @@
  
+        {{log userData}}
         <div class="image1"> 
-        <img class="image2" src="/images/wtf.png"width='200px'/>
-        </div> 
+        <img class="image2" id="character" data-id="{{userData.id}}" src="/images/wtf.png"width='200px'/>
+        </div>
+        HI {{userData.name}}!
         <div class="playButtons">
             <button id="feedMe">Feed Me Seymour!</button>
             <button id="play">Can We Play?</button>
@@ -10,3 +12,4 @@
           </div>
       {{> sun}}
       {{> clock}}
+      
