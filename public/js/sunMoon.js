@@ -16,11 +16,25 @@ const movement = function () {
       sun();
     }
     if (seconds === 178) {
+<<<<<<< HEAD
+      sunDisplay.addClass('erase');
+=======
       sunDisplay.addClass('erase')
+>>>>>>> 1052a98aeca51ac008c80850920695d525da7552
       anime({
         targets: '.sun',
         translateX: -150,
       });
+<<<<<<< HEAD
+      document.body.style.backgroundImage =
+        'url(../images/newnightskytest.png)';
+      moon();
+    }
+
+    if (seconds === 0) {
+      document.body.style.backgroundImage = 'url(../images/newdayskytest.png)';
+      moonDisplay.addClass('erase');
+=======
       document.body.style.backgroundImage = 'url(../images/newnightskytest.png)';
       moon();
     }    
@@ -28,6 +42,7 @@ const movement = function () {
     if (seconds === 0) {
       document.body.style.backgroundImage = 'url(../images/newdayskytest.png)';
       moonDisplay.addClass('erase')
+>>>>>>> 1052a98aeca51ac008c80850920695d525da7552
       anime({
         targets: '.moon',
         translateX: -150,
