@@ -7,6 +7,7 @@ let seconds = 360;
 // Create a timer
 const movement = function () {
   const timer = setInterval(() => {
+
     seconds -= 1; 
     screen
     console.log(screen)  
