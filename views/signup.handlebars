@@ -1,14 +1,15 @@
 <div class="main">  	
-		<input type="checkbox" id="chk" aria-hidden="true">
-
 			<div class="signup">
-				<form>
-					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="User name" id="username-signup">
-					<input type="email" name="email" placeholder="Email">
-					<input type="password" name="pswd" placeholder="Password">
-					<button class="signup-button">Sign up</button>
+				<form class="formFlex">
+					<input type="text" class="form-input" name="txt" placeholder="User name" id="username-signup">
+					<input type="email" class="form-input" name="email" placeholder="Email" id="email-signup">
+					<input type="password" class="form-input" name="pswd" placeholder="Password" id="password-signup">
+					{{> charForm}}
+					<button class="signup-button" type="submit">Sign up</button>
 				</form>
+				<div id="signedUp">
+            <p id="signedUpP"></p>
+        </div>
 			</div>
 	</div>
 

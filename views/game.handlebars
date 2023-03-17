@@ -1,0 +1,14 @@
+ 
+        {{log userData}}
+        <div class="image1"> 
+          {{!-- <p>{{userData.charName}}</p> --}}
+          <p class="welcomeGreeting">Hi {{userData.name}}!</p>
+        <img class="image2" id="character" data-id="{{userData.id}}" src="/images/cactushappy.png"width='200px'/>
+        </div>
+        <div class="playButtons">
+            <button id="feedMe">Feed Me Seymour!</button>
+            <button id="play">Can We Play?</button>
+            <button id="dance">I Wanna Rock!</button>
+            <button id="sleep">I'm Tired...</button>
+          </div>
+      {{> sunMoon}}

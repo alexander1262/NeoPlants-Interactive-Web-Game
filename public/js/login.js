@@ -1,5 +1,5 @@
 // query selector login form
-const loginForm = document.querySelector('.login-form');
+const loginButton = document.querySelector('.login-button');
 
 // create a function to handler the event listener
 async function handleLogin(event) {
@@ -14,9 +14,8 @@ async function handleLogin(event) {
     email: emailValue,
     password: passwordValue,
   };
-
   // ?
-  const response = await fetch('/login', {
+  const response = await fetch('/api/users/login', {
     body: JSON.stringify(userLogin),
     method: 'POST',
     headers: {
@@ -24,16 +23,17 @@ async function handleLogin(event) {
     },
   });
 
-  // test control --Delete after it works--
   if (response.ok) {
     console.log('worked');
+    window.location.replace('/game');
   } else {
     console.log('not worked');
+    document.getElementById('incorrectAlertP').innerHTML =
+      'Incorrect username or password!';
   }
-
   // reset the form
-  loginForm.reset();
+  // loginForm.reset();
 }
 
 // create an event listener when user submit the form
-loginForm.addEventListener('submit', handleLogin);
+loginButton.addEventListener('click', handleLogin);
