@@ -9,43 +9,43 @@ let seconds = 360;
 
 // Function to call the cycle
 const movement = function () {
-
   // Create a timer to manager sun a moon
   const timer = setInterval(() => {
     // reduce seconds by 1
-    seconds -= 1;   
+    seconds -= 1;
 
     // start the sun movement when seconds is equal to 358
     // set the opacity of sun and moon element to 1
     // call sun function
-    if (seconds === 358) {      
-      sunDisplay.fadeTo('slow', 1)
-      moonDisplay.fadeTo('slow', 1)
+    if (seconds === 358) {
+      sunDisplay.fadeTo('slow', 1);
+      moonDisplay.fadeTo('slow', 1);
       sun();
     }
 
     // when seconds is equal to 180
     // set the opacity of sun to cero to erase it from the screen
     if (seconds === 180) {
-      sunDisplay.fadeTo('slow', 0)     
+      sunDisplay.fadeTo('slow', 0);
     }
 
     // when seconds is equal to 178, get the sun back where it started
-    if (seconds === 178) {   
+    if (seconds === 178) {
       anime({
         targets: '.sun',
         translateX: -150,
       });
       // change the background to night
-      document.body.style.backgroundImage = 'url(../images/newnightskytest.png)';
+      document.body.style.backgroundImage =
+        'url(../images/newnightskytest.png)';
       // start the moon movement
       moon();
-    }   
-    
+    }
+
     // when seconds is equal to 2
     // set the opacity of moon to cero to erase it from the screen
     if (seconds === 2) {
-      moonDisplay.fadeTo('slow', 0)
+      moonDisplay.fadeTo('slow', 0);
     }
 
     // when seconds is equal to 0
@@ -57,7 +57,7 @@ const movement = function () {
         targets: '.moon',
         translateX: -150,
       });
-      // Clear the interval 
+      // Clear the interval
       clearInterval(timer);
       // set seconds
       seconds = 360;
