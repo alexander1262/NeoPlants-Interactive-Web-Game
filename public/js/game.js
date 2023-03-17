@@ -92,7 +92,7 @@ playButton.addEventListener('click', () => health());
 playButton.addEventListener('click', () => play());
 musicButton.addEventListener('click', () => health());
 musicButton.addEventListener('click', () => dance());
-sleepButton.addEventListener('click', () => health());
+sleepButton.addEventListener('click', () => sleep());
 sleepButton.addEventListener('click', () => sleep());
 
 async function save() {
