@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Character } = require('../../models');
 
 router.post('/signup', async (req, res) => {
   console.log(req.body);
@@ -27,6 +27,7 @@ router.post('/login', async (req, res) => {
   console.log(req.body);
   try {
     const userData = await User.findOne({
+      include: [{ model: Character }],
       where: {
         email: req.body.email,
       },

@@ -21,7 +21,9 @@ async function getScore() {
         }
         throw new Error('Something went wrong');
     }).then((data) => {
-        console.log(data.charScore);
+        console.log(data);
+        const charId = document.getElementById('feedMe');
+        charId.dataset.id = data.user_id;
         const bar = document.getElementById('myBar');
         bar.dataset.life = data.charScore;
         bar.innerHTML = data.charScore;
@@ -91,4 +93,35 @@ playButton.addEventListener('click', () => play());
 musicButton.addEventListener('click', () => health());
 musicButton.addEventListener('click', () => dance());
 sleepButton.addEventListener('click', () => sleep());
+sleepButton.addEventListener('click', () => sleep());
 
+async function save() {
+    const saveMe = document.getElementById('feedMe');
+    const saveChar = saveMe.dataset.id;
+    const bar = document.getElementById('myBar');
+    const barLife = bar.dataset.life;
+    const barScore = {
+        user_id: saveChar,
+        charScore: barLife,
+    };
+
+    const sav = await fetch(`/api/character/${saveChar}`, {
+        body: JSON.stringify(barScore),
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json',
+        },
+    })
+    if (sav.ok) {
+        console.log('You have saved!');
+    } else {
+        console.log('save unsuccessful');
+    }
+
+
+
+
+};
+
+const charButton = document.getElementById('character');
+charButton.addEventListener('click', () => save());
