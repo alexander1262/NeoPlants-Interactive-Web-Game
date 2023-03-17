@@ -72,19 +72,149 @@ const sleepButton = document.getElementById('sleep');
 
 function dance() {
     document.getElementById('character').src = '/images/music.webp';
+    animateDance();
 }
 
 function feed() {
     document.getElementById('character').src = '/images/cook.webp'
+    animateFeed();
 }
 
 function play() {
     document.getElementById('character').src = '/images/mail.webp'
+    animatePlay();
 }
 
 function sleep() {
-    document.getElementById('character').src = '/images/what.webp'
+    document.getElementById('character').src = '/images/what.webp'    
+    animateTired();
 }
+
+const animateFeed = function () {
+    // Create a timeline with default parameters
+var tl = anime.timeline({
+    easing: 'linear',
+    duration: 1000
+  });
+  
+  // Add children
+  tl
+  .add({
+    targets: '.image2',
+    scale: ["0.8", "1.4"],
+  })
+  .add({
+    targets: '.image2',
+    scale: ["0.8", "1.4"],
+  })
+  .add({
+    targets: '.image2',
+    scale: ["0.8", "1.4"],
+  })
+  .add({
+    targets: '.image2',
+    scale: 1,
+  });
+}
+
+const animatePlay = function () {
+    // Create a timeline with default parameters
+var tl = anime.timeline({
+    easing: 'linear',
+    duration: 10
+  });
+  
+  // Add children
+  tl
+  .add({
+    targets: '.image2',
+    translateY: 10,
+  })
+  .add({
+    targets: '.image2',
+    translateX: 8,
+  })
+  .add({
+    targets: '.image2',
+    translateY: 15,
+  })
+  .add({
+    targets: '.image2',
+    translateX: 16,
+  })
+  .add({
+    targets: '.image2',
+    translateY: 20,
+  })
+}
+
+const animateDance = function () {
+    // Create a timeline with default parameters
+var tl = anime.timeline({
+    easing: 'easeOutExpo',
+    duration: 750
+  });
+  
+  // Add children
+  tl
+  .add({
+    targets: '.image2',
+    rotate: 250,
+  })
+  .add({
+    targets: '.image2',
+    rotate: 0,
+  })
+  .add({
+    targets: '.image2',
+    rotate: -16,
+  })
+  .add({
+    targets: '.image2',
+    rotate: 0,
+  });
+
+}
+
+const animateTired = function () {
+    // Create a timeline with default parameters
+var tl = anime.timeline({
+    easing: 'easeOutExpo',
+    duration: 750
+  });
+  
+  // Add children
+  tl
+  .add({
+    targets: '.image2',
+    opacity: "0.8",
+  })
+  .add({
+    targets: '.image2',
+    opacity: "0.6",
+  })
+  .add({
+    targets: '.image2',
+    opacity: "0.4",
+  })
+  .add({
+    targets: '.image2',
+    opacity: "0.2",
+  })
+  .add({
+    targets: '.image2',
+    opacity: "0",
+  })
+  .add({
+    targets: '.image2',
+    opacity: "0",
+  })
+  .add({
+    targets: '.image2',
+    opacity: "1",
+  });
+}
+
 
 feedMeButton.addEventListener('click', () => health());
 feedMeButton.addEventListener('click', () => feed());
