@@ -2,6 +2,7 @@
   position: relative;
   top: 0;
   left: 0;
+}
 
 .image2 {
   /* position: absolute; */
@@ -12,6 +13,7 @@
   /* top: 500px; */
   /* border: 1px solid #000000; */
   bottom: -40vh;
+}
 
 .welcomeGreeting {
   position:relative;
