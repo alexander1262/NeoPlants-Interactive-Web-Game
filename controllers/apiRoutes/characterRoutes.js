@@ -32,34 +32,17 @@ router.get('/:id', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   try {
-    const { id } = req.params.id;
-    const { score } = req.body.score;
-
-    const character = await Character.findByPk(id);
-
-    if (!character) {
-      throw new Error('Character not found');
-    }
-
-    const newScore = score;
-
     const updated = await Character.update(
-      { charScore: newScore },
+      {
+        charScore: req.body.charScore,
+      },
       {
         where: {
-          id,
+          user_id: req.body.user_id,
         },
       }
     );
-    if (updated) {
-      const updatedChar = await Character.findOne({
-        where: {
-          id,
-        },
-      });
-      return res.status(200).json({ character: updatedChar });
-    }
-    throw new Error('Character not updated');
+    return res.status(200).json(updated);
   } catch (error) {
     return res.status(500).send(error.message);
   }
