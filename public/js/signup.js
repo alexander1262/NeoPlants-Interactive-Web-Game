@@ -48,7 +48,8 @@ async function handleSignup(event) {
   console.log(newCharacter);
   if (createChar.ok) {
     console.log('Signed Up');
-    document.getElementById('signedUpP').innerHTML = 'Successfully created character!';
+    document.getElementById('signedUpP').innerHTML =
+      'Successfully created character!';
   } else {
     console.log('No new character');
   }

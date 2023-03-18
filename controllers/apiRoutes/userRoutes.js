@@ -27,10 +27,10 @@ router.post('/login', async (req, res) => {
   console.log(req.body);
   try {
     const userData = await User.findOne({
-      include: [{ model: Character }],
-      where: {
-        email: req.body.email,
-      },
+      // include: [{ model: Character }],
+      // where: {
+      //   email: req.body.email,
+      // },
     });
     if (!userData) {
       return res.status(400).json({
