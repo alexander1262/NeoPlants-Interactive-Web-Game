@@ -1,7 +1,16 @@
 
 <section class="musicSection">
-    <button id="music-toggle">Toggle Music</button>
-   <audio id="music" src="/assets/indie-summer-141351.mp3"></audio>
+    <button class= "music-buttons" id="music-toggle">Play Music</button>
+    <div id="music-list">
+        <audio id="music">
+            <source class = 'play-list' src="/assets/vlog-upbeat-hip-hop-background-music-140880.mp3" type="audio/mpeg">
+            <source class = 'play-list' src="assets/lo-fi-hip-hop-chilling-vibes-141113.mp3" type="audio/mpeg">
+            <source class = 'play-list' src="/assets/indie-summer-141351.mp3" type="audio/mpeg">
+            <source class = 'play-list' src="assets/floating-abstract-142819.mp3" type="audio/mpeg">
+        </audio>
+        <button class="change-buttons music-buttons" id="back">Back</button>
+        <button class="change-buttons music-buttons" id="skip">Skip</button>
+    </div>
    <input type ="range" id="volume-slider" min ="0" max="1" step="0.1" value="1">
 </section>
 
