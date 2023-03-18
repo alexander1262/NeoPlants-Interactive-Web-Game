@@ -2,7 +2,7 @@
 const User = require('./user');
 const Character = require('./character');
 
-User.hasOne(Character, {
+User.hasMany(Character, {
   foreignKey: 'user_id',
   onDelete: 'SET NULL',
 });
