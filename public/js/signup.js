@@ -7,10 +7,8 @@ async function handleSignup(event) {
   const userNameValue = document.querySelector('#username-signup').value.trim();
   const passwordValue = document.querySelector('#password-signup').value.trim();
   const emailValue = document.querySelector('#email-signup').value.trim();
-  const characterName = document.querySelector('#char-name').value.trim();
-  const characterType = document.querySelector('#cactus').value;
-  console.log(characterName);
-  console.log(characterType);
+  // const characterName = document.querySelector('#char-name').value.trim();
+  // const characterType = document.querySelector('#cactus').value;
   const newUser = {
     username: userNameValue,
     email: emailValue,
@@ -28,30 +26,9 @@ async function handleSignup(event) {
   if (response.ok) {
     console.log('Signed Up');
     document.getElementById('signedUpP').innerHTML = 'Successfully signed up!';
+    window.location.replace('/create');
   } else {
     console.log('Not Signed Up');
-  }
-
-  const newCharacter = {
-    username: userNameValue,
-    email: emailValue,
-    charName: characterName,
-    charType: characterType,
-  };
-  const createChar = await fetch('/api/character/signup', {
-    body: JSON.stringify(newCharacter),
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-    },
-  });
-  console.log(newCharacter);
-  if (createChar.ok) {
-    console.log('Signed Up');
-    document.getElementById('signedUpP').innerHTML =
-      'Successfully created character!';
-  } else {
-    console.log('No new character');
   }
 
   console.log({ userNameValue, passwordValue, emailValue });
