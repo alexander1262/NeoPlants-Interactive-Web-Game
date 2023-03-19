@@ -565,12 +565,12 @@ path {
   .playButtons button {
     width: 20vh;
   }
-  body {
+  /* body {
     max-height: 768px;
     max-width: 390px;
     overflow-x: hidden;
     overflow-y: hidden;
-  }
+  } */
   #clock {
     scale: .5;
     position: absolute;
@@ -583,10 +583,13 @@ path {
     top: 2vh;
   }
   .welcomeGreeting {
-    bottom: -45vh;
+    bottom: -35vh;
   }
   .image2 {
-    bottom: -40vh;
+    bottom: -30vh;
+  }
+  .homepageButtons {
+    padding-top: 120px;
   }
   .homepageButtons {
     padding-top: 120px;
