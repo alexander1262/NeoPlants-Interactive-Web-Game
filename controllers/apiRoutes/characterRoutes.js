@@ -3,7 +3,7 @@ const { response } = require('express');
 const { sequelize } = require('../../config/connection');
 const { Character, User } = require('../../models');
 const withAuth = require('../../utils/auth');
-
+// when user is on the main page all character are loaded with their users
 router.get('/', async (req, res) => {
   try {
     const charData = await Character.findAll({
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     return res.status(500).json(err);
   }
 });
-
+// when user clicks on an id the route finds any characters with the id that matches
 router.get('/:id', async (req, res) => {
   try {
     const charData = await Character.findByPk(req.params.id, {
@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
     return res.status(500);
   }
 });
-
+// this route uses the id to find a character that matches that id and updates the database
 router.put('/:id', async (req, res) => {
   try {
     const updated = await Character.update(
@@ -49,7 +49,7 @@ router.put('/:id', async (req, res) => {
     return res.status(500).send(error.message);
   }
 });
-
+// this route listens for the /create call an if the user is logged in it creates a character
 router.post('/create', withAuth, async (req, res) => {
   try {
     const newChar = await Character.create({

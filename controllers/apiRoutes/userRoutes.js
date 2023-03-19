@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Character } = require('../../models');
-
+// listens for signup and creates a user when called
 router.post('/signup', async (req, res) => {
   console.log(req.body);
   try {
@@ -12,7 +12,7 @@ router.post('/signup', async (req, res) => {
     console.log(userData);
     const plainUser = userData.get({ plain: true });
     console.log(plainUser);
-
+    // saves the user data and puts it in the session data
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.loggedIn = true;
@@ -23,7 +23,7 @@ router.post('/signup', async (req, res) => {
     return res.status(400).json(err);
   }
 });
-
+// listens for login and finds the user to allow the user to login
 router.post('/login', async (req, res) => {
   console.log(req.body);
   try {
@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
     return res.status(400).json(err);
   }
 });
-
+// listens for user to click logout and destroys sessions if user is logged in
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
