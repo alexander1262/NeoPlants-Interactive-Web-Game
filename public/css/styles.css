@@ -12,12 +12,12 @@
   display: flex;
   /* top: 500px; */
   /* border: 1px solid #000000; */
-  bottom: -40vh;
+  bottom: -30vh;
 }
 
 .welcomeGreeting {
   position:relative;
-  bottom: -42vh;
+  bottom: -32vh;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -483,50 +483,10 @@ path {
   fill:none;
 }
 
-@media screen and (max-width: 768px) {
-  .logout-link {
-    scale: .75;
-  }
-  .playButtons {
-    scale: .6;
-  }
-  #feedMe {
-    width: 200px;
-  }
-  #play {
-    width: 200px;
-  }
-  #dance {
-    width: 200px;
-  }
-  #sleep {
-    width: 200px;
-  }
-  body {
-    max-height: 768px;
-    max-width: 390px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-  #clock {
-    scale: .5;
-  }
-  .playButtons {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* .sun {
-    scale: .25;
-  }
-  .moon {
-    scale: .25;
-  } */
-}
-
 .cloud1 {
   position: absolute;
   top: 30vh;
-  left: -30vh;
+  left: -40vh;
 }
 
 .cloud2 {
@@ -543,10 +503,96 @@ path {
 .cloud4 {
   position: absolute;
   top: 10vh;
-  left: -30vh;
+  left: -40vh;
 }
 .cloud5 {
   position: absolute;
   top: 40vh;
-  left: -20vh;
+  left: -30vh;
+}
+
+.createWrapper {
+  background-color: rgb(255, 219, 186);
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.createWrapper label {
+  color: rgb(255, 143, 38);
+}
+
+.createWrapper input {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.createWrapper button {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  background-color: rgb(255, 219, 186);
+  color: rgb(255, 143, 38);
+  text-shadow: 2px 2px 2px black;
+  font-size: 18px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.createWrapper button:hover {
+  scale: 1.05;
+  transition: 0.2s;
+}
+
+@media screen and (max-width: 768px) {
+  .logout-link {
+    scale: .75;
+    top: 4vh;
+    right: -2vh;
+  }
+  .playButtons {
+    scale: .6;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .playButtons button {
+    width: 20vh;
+  }
+  /* body {
+    max-height: 768px;
+    max-width: 390px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  } */
+  #clock {
+    scale: .5;
+    position: absolute;
+    top: 13vh;
+  }
+  .musicSection {
+    position: absolute;
+    scale: .75;
+    left: -2vh;
+    top: 2vh;
+  }
+  .welcomeGreeting {
+    bottom: -35vh;
+  }
+  .image2 {
+    bottom: -30vh;
+  }
+  .homepageButtons {
+    padding-top: 120px;
+  }
+  .homepageButtons {
+    padding-top: 120px;
+  }
+
 }
