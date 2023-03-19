@@ -3,6 +3,7 @@
   ## Table of Content
   
   - [Description](#Description)
+  - [Screenshot](#neoplants-login-page)
   - [Usage](#Usage)
   - [Technology](#Technology)
   - [Contributors](#Contributors)
@@ -19,6 +20,10 @@ The game where you grow your loveable plant on a screen. No messy dirt, water, o
 All you need to do is interact with your plant daily. 
 Feed it, give it water, and play music. Each activity will give your plant life! 
 But, beware, if you don't visit your plant regularly you will neglect it to death. 
+
+## NeoPlants Login Page
+
+![NeoPlants Login](./public/images/NeoPlants.png)
 
 ## Usage
 
