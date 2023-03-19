@@ -22,6 +22,7 @@ async function createChar(event) {
         console.log('created Character!');
         document.getElementById('signedUpc').innerHTML =
             'Successfully created character!';
+        window.location.replace('/login');
     } else {
         console.log('No new character');
     }

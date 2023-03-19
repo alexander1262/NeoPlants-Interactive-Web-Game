@@ -3,14 +3,13 @@ const signupButton = document.querySelector('.signup-button');
 async function handleSignup(event) {
   event.preventDefault();
   console.log('here');
-  const signupForm = document.querySelector('#formFlex');
   const userNameValue = document.querySelector('#username-signup').value.trim();
   const passwordValue = document.querySelector('#password-signup').value.trim();
   const emailValue = document.querySelector('#email-signup').value.trim();
   // const characterName = document.querySelector('#char-name').value.trim();
   // const characterType = document.querySelector('#cactus').value;
   const newUser = {
-    username: userNameValue,
+    name: userNameValue,
     email: emailValue,
     password: passwordValue,
   };
@@ -32,8 +31,6 @@ async function handleSignup(event) {
   }
 
   console.log({ userNameValue, passwordValue, emailValue });
-
-  signupForm.reset();
 }
 
 signupButton.addEventListener('click', handleSignup);
