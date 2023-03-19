@@ -12,7 +12,7 @@
   display: flex;
   /* top: 500px; */
   /* border: 1px solid #000000; */
-  bottom: -40vh;
+  bottom: -30vh;
 }
 
 .welcomeGreeting {
@@ -486,20 +486,13 @@ path {
 @media screen and (max-width: 768px) {
   .logout-link {
     scale: .75;
+    top: 4vh;
+    right: -2vh;
   }
   .playButtons {
     scale: .6;
   }
-  #feedMe {
-    width: 200px;
-  }
-  #play {
-    width: 200px;
-  }
-  #dance {
-    width: 200px;
-  }
-  #sleep {
+  .playButtons button {
     width: 200px;
   }
   body {
@@ -510,6 +503,8 @@ path {
   }
   #clock {
     scale: .5;
+    position: absolute;
+    top: 13vh;
   }
   .playButtons {
     padding-left: 0;
@@ -521,6 +516,14 @@ path {
   .moon {
     scale: .25;
   } */
+
+  .musicSection {
+    position: absolute;
+    scale: .75;
+    left: -2vh;
+    top: 2vh;
+  }
+
 }
 
 .cloud1 {
@@ -590,3 +593,4 @@ path {
   scale: 1.05;
   transition: 0.2s;
 }
+
