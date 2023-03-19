@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { response } = require('express');
 const { sequelize } = require('../../config/connection');
 const { Character, User } = require('../../models');
 const withAuth = require('../../utils/auth');
@@ -49,23 +50,6 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.post('/signup', async (req, res) => {
-  try {
-    const newUser = await User.create({
-      ...req.body,
-    });
-    req.session.save(() => {
-      req.session.user_id = 2;
-      req.session.loggedIn = true;
-    });
-
-    console.log(req.session.userData);
-    return res.status(200).json(newUser);
-  } catch (err) {
-    return res.status(400).json(err);
-  }
-});
-
 router.post('/create', withAuth, async (req, res) => {
   try {
     const newChar = await Character.create({
@@ -73,7 +57,6 @@ router.post('/create', withAuth, async (req, res) => {
       user_id: req.session.user_id,
     });
     console.log(newChar);
-    console.log(req.session);
     return res.status(200).json(newChar);
   } catch (err) {
     return res.status(400).json(err);

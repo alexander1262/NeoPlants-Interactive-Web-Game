@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-inner-declarations */
 /* eslint-disable prettier/prettier */
@@ -60,8 +61,14 @@ function health() {
   if (i <= 100) {
     el.style.width = ++i;
     el.innerHTML = ++i;
-    console.log(i);
     el.dataset.life = i;
+  } else if (i >= 101) {
+    i = 0;
+    el.style.width = i;
+    el.innerHTML = i;
+    el.dataset.life = i;
+    clearInterval(id)
+    alert('You Killed me Game OVER!')
   }
 };
 
@@ -244,6 +251,7 @@ async function save() {
     },
   })
   if (sav.ok) {
+    window.location.reload();
     console.log('You have saved!');
   } else {
     console.log('save unsuccessful');
