@@ -2,15 +2,16 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-inner-declarations */
 /* eslint-disable prettier/prettier */
+// this creates the bar and styles it
 const progressBar = document.createElement('div');
 progressBar.id = 'myBar';
 progressBar.style.color = 'red';
 document.body.prepend(progressBar);
-
+// this function does a fetch call to grab the user saved score
 async function getScore() {
   const score = document.getElementById('character');
   const healthBar = score.dataset.id;
-  console.log(healthBar);
+
   fetch(`/api/character/${healthBar}`, {
     method: 'GET',
     headers: {
@@ -22,7 +23,7 @@ async function getScore() {
     }
     throw new Error('Something went wrong');
   }).then((data) => {
-    console.log(data);
+
     const charId = document.getElementById('feedMe');
     charId.dataset.id = data.user_id;
     const bar = document.getElementById('myBar');
@@ -35,14 +36,13 @@ getScore();
 
 
 
-
+// this function decays the plants health when page loads
 const id = setInterval(decay, 10000);
 
 function decay() {
 
   const elem = document.getElementById('myBar');
   let width = elem.dataset.life;
-  console.log(width);
   --width;
   elem.style.width = `${width}%`;
   elem.dataset.life = width;
@@ -53,7 +53,7 @@ function decay() {
   }
 };
 
-
+// this function increments the health bar when its called
 function health() {
 
   const el = document.getElementById('myBar');
@@ -71,32 +71,32 @@ function health() {
     alert('You Killed me Game OVER!')
   }
 };
-
+// these buttons are created here using the id of the element
 const feedMeButton = document.getElementById('feedMe');
 const playButton = document.getElementById('play');
 const musicButton = document.getElementById('dance');
 const sleepButton = document.getElementById('sleep');
-
+// this function switches out the picture when the user clicks the appropriate function
 function dance() {
   document.getElementById('character').src = '/images/music.webp';
   animateDance();
 }
-
+// this function switches out the picture when the user clicks the appropriate function
 function feed() {
   document.getElementById('character').src = '/images/cook.webp'
   animateFeed();
 }
-
+// this function switches out the picture when the user clicks the appropriate function
 function play() {
   document.getElementById('character').src = '/images/mail.webp'
   animatePlay();
 }
-
+// this function switches out the picture when the user clicks the appropriate function
 function sleep() {
   document.getElementById('character').src = '/images/what.webp'
   animateTired();
 }
-
+// animates the plan when the feed button is clicked
 const animateFeed = function () {
   // Create a timeline with default parameters
   const tl = anime.timeline({
@@ -123,7 +123,7 @@ const animateFeed = function () {
       scale: 1,
     });
 }
-
+// when the user clicks this button the plant plays
 const animatePlay = function () {
   // Create a timeline with default parameters
   const tl = anime.timeline({
@@ -154,7 +154,7 @@ const animatePlay = function () {
       translateY: 20,
     })
 }
-
+// when the user clicks the animate button the plant dances
 const animateDance = function () {
   // Create a timeline with default parameters
   const tl = anime.timeline({
@@ -182,7 +182,7 @@ const animateDance = function () {
     });
 
 }
-
+// the user clicks the button it animates the plant
 const animateTired = function () {
   // Create a timeline with default parameters
   const tl = anime.timeline({
@@ -222,7 +222,7 @@ const animateTired = function () {
     });
 }
 
-
+// event listeners for when the user click these buttons to run the functions associated with them
 feedMeButton.addEventListener('click', () => health());
 feedMeButton.addEventListener('click', () => feed());
 playButton.addEventListener('click', () => health());
@@ -232,7 +232,7 @@ musicButton.addEventListener('click', () => dance());
 sleepButton.addEventListener('click', () => health());
 sleepButton.addEventListener('click', () => sleep());
 sleepButton.addEventListener('click', () => sleep());
-
+// save function to save the users health bar when the user clicks the plant
 async function save() {
   const saveMe = document.getElementById('feedMe');
   const saveChar = saveMe.dataset.id;
@@ -261,6 +261,6 @@ async function save() {
 
 
 };
-
+// create button and listener to call character function
 const charButton = document.getElementById('character');
 charButton.addEventListener('click', () => save());
