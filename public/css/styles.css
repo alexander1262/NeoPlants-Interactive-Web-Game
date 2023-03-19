@@ -588,5 +588,8 @@ path {
   .image2 {
     bottom: -40vh;
   }
+  .homepageButtons {
+    padding-top: 120px;
+  }
 
 }
