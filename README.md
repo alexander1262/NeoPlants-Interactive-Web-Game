@@ -25,6 +25,9 @@ But, beware, if you don't visit your plant regularly you will neglect it to deat
 
 ![NeoPlants Login](./public/images/NeoPlants.png)
 
+Deployed Site:
+https://grey-stones.herokuapp.com/
+
 ## Usage
 
 When the user reaches the homepage they are able to either login or sign-up. If this is the users first time playing the game they will need to sign-up. Once they complete the sign-up form they are prompted to create a character. Once a character is created the user to redirected to the game page. They are greeted when the land on the game page. Here they are able to interact with the plant. If the user clicks on either 'Feed', 'Play', 'Play Music!', or 'Sleep' they increase the health bar of the plant. The health bar begins at 100 but will begin to decrease as time goes by. To stop this the user needs to interact with the plant. When the user ends the game and clicks 'logout' their current plant health is saved in the database. The user is then redirected to the login page. When the user comes back to play again they can login and start their game up where they left off. The user is also able to play background music as they are playing the game. They can start, pause, go to the next track or the previous one. There are currently four tracks to pick from. As the user is playing the background will change from day to night every 180 seconds. A clock is displayed that shows the current time as well.
